@@ -19,7 +19,7 @@ html, body{
     background-color: var(--background);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     box-sizing: border-box;
-    color: var(--text);
+    /* color: var(--text); */
 }
 li{
     display: flex;
@@ -29,7 +29,7 @@ li{
     border-bottom: 1px solid gray;
     background-color: #F7F7F7;
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     align-items: center;
     padding: .5rem;
     height: 1.5rem;
@@ -37,16 +37,19 @@ li{
 }
 
 .header-span{
+    font-family: Roboto;
+    font-size: 16px;
     color: var(--text);
     margin-right: auto;
-    margin-left: 10rem;
+    margin-left: 12%;
     padding-left: 1rem;
     margin-top: auto;
 }
 
 .klocka{
     color: var(--blue);
-    font-size: 1.1em;
+    font-size: 1.2em;
+    margin-right: 0.7rem;
 }
 
 .social{
@@ -85,33 +88,42 @@ a{
 
 
 .main-menu{
+    height: 15%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    color: var(--text);
+    color: var(--title);
 }
 
+.navbar{
+    /* padding: 1rem; */
+    /* padding-top: ; */
+    margin-right: 10%;
+}
 
 .navbar ul{
     color: var(--text);
     display: flex;
-    width: 50rem;
+    width: 90%;
     justify-content: center;
     flex-direction: row;
     padding: 2rem;
 }
 
 .navbar li{
-    color: var(--text);
-    padding: 1rem;
+    font-family: roboto Slab;
+    font-size: 18px;
+    color: var(--title);
+    padding: .5rem;
     margin: 1rem;
+    font-weight: 500;
     
 
 }
 
 .logo{
     padding: 2rem;
-    margin-left: 12rem;
+    margin-left: 10%;
     margin-right: auto;
 }
 
@@ -263,5 +275,6 @@ p{
 }
 
 footer{
-    background-color: #2BAAEC;
+    background-color: var(--blue);
+    height: auto;
 }
