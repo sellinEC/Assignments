@@ -17,9 +17,9 @@
 
 html, body{
     background-color: var(--background);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Roboto;
     box-sizing: border-box;
-    /* color: var(--text); */
+    color: var(--text);
 }
 li{
     display: flex;
@@ -140,7 +140,7 @@ a{
 }
 .ph1{
     height: auto;
-    width: auto%;
+    width: auto;
     background-color: var(--placehold1);
     color: #DEDEDE;
 }
@@ -201,7 +201,7 @@ h3{
     width: 90%;
     height: auto;
     display: border-box;  
-    background-color: var(--background);
+    background-color: #FFFFFF;
     justify-content: center;
     display: flex;
     /* border: 1px solid black; */
@@ -279,6 +279,92 @@ p{
     margin-top: 10px;
     margin-bottom: 0;
     line-height: 0;
+}
+.services{
+    display: flex;
+    /* border: 1px solid black; */
+    padding: 11%;
+    padding-top: 5%;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.services h1{
+    width: 29%;
+    font-family: Roboto Slab;
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--title);
+    border-bottom: 4px solid var(--green);
+    padding: 1rem;
+    align-self: center;
+    margin-bottom: 5%;
+}
+
+.contain{
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-basis: 10%; */
+    justify-content: space-evenly;
+    /* padding: 2rem; */
+}
+
+.card  {
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    /* font-family: Roboto; */
+    background-color: #FFFFFF;
+    display: flex;
+    flex: 0 0 31%;
+    height: 436px;
+    width: 450px;
+    /* padding:1rem; */
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    /* text-align: center; */
+    
+}
+
+.card h3{
+    font-family: roboto slab;
+    font-size: 22;
+    color: var(--title);
+    margin-top: 3rem;
+    margin-bottom: 0;
+}
+
+.circle{
+    display: flex;
+    height: 120px;
+    width: 120px;
+    background-color: #25E6C8;
+    border-radius: 50%;
+    align-self: center;
+    margin-top: 5%;
+    margin-bottom: 5;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle:hover{
+    background-color: var(--blue);
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    width: 54%;
+    text-align: center;
 }
 .wrapperb{
     background-color: #3faeeb;
