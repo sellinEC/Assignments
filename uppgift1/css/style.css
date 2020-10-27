@@ -12,7 +12,11 @@
 
 }
 *{
+    margin: 0;
+}
 
+h1 {
+    font-family: Roboto Slab;
 }
 
 html, body{
@@ -366,11 +370,37 @@ p{
     width: 54%;
     text-align: center;
 }
-.wrapperb{
-    background-color: #3faeeb;
+
+.book{
+    margin: 0;
+    display: flex;
+    height: 4rem;
+    background-color: var(--blue);
+    color: #FFFFFF;
+    text-align: left;
+    padding: 5%;
+    justify-content: space-between;
+}
+
+.book h1{
+    font-family: Roboto Slab;
+    font-size: 30px;
+    margin-left: 5%;
+}
+.bb{
+    background-color: var(--background);
+    color: var(--blue);
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 0 3rem;
+    margin-right: 10%;
 }
 
 footer{
-    background-color: var(--blue);
-    height: auto;
+    background-color: #0e9fec;
+   height: 4rem;
+   text-align: center;
+   color: var(--background);
 }
