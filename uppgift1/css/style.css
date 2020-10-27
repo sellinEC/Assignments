@@ -399,8 +399,12 @@ p{
 }
 
 footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #0e9fec;
-   height: 4rem;
-   text-align: center;
-   color: var(--background);
+    height: 4rem;
+    text-align: center;
+    margin-top: auto;
+    color: var(--background);
 }
