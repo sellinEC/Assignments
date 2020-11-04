@@ -9,6 +9,7 @@
     --blue:#2BAAEC;
     --border: #D2D2D2;
     --footer:#F3FBFF;
+    --white:#FFFFFF;
 
 }
 *{
@@ -337,6 +338,12 @@ p{
     align-content: center;
     /* text-align: center; */
     
+}
+
+.card:hover{
+    transition-delay: .3s;
+    box-shadow: 10px 10px rgba(98, 98, 98, .2);
+
 }
 
 .card h3{

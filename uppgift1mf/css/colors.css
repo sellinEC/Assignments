@@ -1,0 +1,32 @@
+:root{
+    --background:#F7F7F7;
+    --background-dark:#163C70;
+    --text:#626262;
+    --title:#363636;
+    --placehold1:#DEDEDE;
+    --placehold2:#BFBFBF;
+    --green:#25E6C8;
+    --blue:#2BAAEC;
+    --border: #D2D2D2;
+    --footer:#F3FBFF;
+    --white:#FFFFFF;
+    --slab: 'Roboto Slab', serif;
+
+}
+
+.bg-blue {
+    background-color: var(--blue);
+}
+
+.bg-gray {
+    background-color: var(--placehold1)
+}
+
+.text-white {
+    color: var(--background);
+}
+
+
+.slab {
+    font-family: var(--slab);
+}
