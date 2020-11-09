@@ -80,6 +80,7 @@ header, section, footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .brand {
@@ -102,15 +103,17 @@ header, section, footer{
     align-items: center;
     flex-grow: 1;
 }
-.collapsepad-collapse{
+/* .collapsepad-collapse{
     flex-basis: 100%;
     align-items: center;
     flex-grow: 1;
-}
+} */
 
 .navbar-nav{
     display: flex;
     flex-direction: column;
+    margin-left: auto;
+    
 }
 
 .nav-link {
@@ -119,10 +122,31 @@ header, section, footer{
 }
 
 
-
-#aboutus {
-
+#showcase .container{
+    background-color: var(--placehold1);
+    font-size: .8rem;
+    /* color: var(--text); */
+    padding: 1rem;
 }
+#showcase .container h1{
+    color: var(--title);
+    font-family: var(--slab);
+    font-size: 1.5rem;
+}
+
+#show-btn{
+    background-color: var(--green);
+    border: none;
+    border-radius: 5px;
+    color: var(--white);
+    padding: .4rem 2rem;
+    
+    font-weight: 600;
+}
+
+/* #aboutus {
+
+} */
 
 #aboutus span{
     color: var(--blue);
@@ -140,6 +164,10 @@ header, section, footer{
     /* margin-top: 5px; */
     margin-bottom: 0;
     line-height: 0;
+}
+
+#mobile {
+    display: flex;
 }
 
 .parags{
@@ -234,6 +262,15 @@ header, section, footer{
     padding: 1rem 0;
 }
 
+#book-btn{
+    border: none;
+    padding: .4rem 2rem;
+    color: var(--blue);
+    border-radius: 5px;
+    background-color: var(--footer);
+    font-weight: 700;
+}
+
 
 
 footer{
@@ -321,23 +358,19 @@ footer{
     .counters{
         grid-area: counters;
     }
-    .img2 {
-        grid-area: picture;
-    }
+
 }
 
 @media (min-width: 1020){
     .container{
         max-width: 980px;
     }
-    .collapsepad:not(.show) {
-        display: flex;
-    }
+
 }
 
 @media (min-width: 1200px) {
     .container {
-        max-width: 1140px;
+        max-width: 80%;
     }
     .center-content{
         display: flex;
@@ -353,6 +386,12 @@ footer{
     #ourservices{
         margin: auto 10%;
         padding: 1rem;
+     }
+     
+    .collapsepad:not(.show) {
+        display: grid;
+        grid-area: picture;
+        
     }
 }
 
