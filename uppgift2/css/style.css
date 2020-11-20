@@ -60,3 +60,6 @@ nav li{
     font-weight: 800 !important;
 }
 
+.carousel{
+    height: 50vh;
+}
