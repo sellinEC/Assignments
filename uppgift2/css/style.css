@@ -1,4 +1,5 @@
 @import "colors.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 *{
     margin: 0;
     color: #8A8A8A;
@@ -7,32 +8,29 @@
 }
 
 html, body{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     position: relative;
+    background-image: url(/images/bgblue.png);
+    background-repeat: no-repeat;
+    
     
 }
 
+.container{ max-width:80% !important;}
+
+
 h1{
     color: black;
+    font-weight: 600;
 }
 
 .topside{
     height: 100vh;
-    
-    /* border: 1px solid black */
 }
 
 
-#blueback{
-    z-index: -1;
-    top: 0px;
-    left: -82px;
-    position: absolute;
-    bottom: 100px;
-    height: 100vh;
-    /* background-color: aqua; */
-}
+
 
 .navbar, .card { box-shadow: none !important;
 font-weight: 600; } 
@@ -44,7 +42,30 @@ font-weight: 600; }
 
 nav li{
     margin-right: 1.3rem;
+    
 }
+a{
+    color: white;
+    
+}
+
+.nav-item.active {
+    color: black !important;
+}
+
+.nav-item.active:after {
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 ; /* This will center the border. */
+    width: 60%; /* Change this to whatever width you want. */
+    padding: 0;/* This creates some space between the element and the border. */
+    border-bottom: 3px solid #FFBB00; /* This creates the border. Replace black with whatever color you want. */
+}
+
+.nav-item.active .nav-link{
+    color:#FFBB00 !important;
+}
+
 
 .btn{
     border: 2px solid white;
@@ -70,18 +91,30 @@ nav li{
     font-weight: 800 !important;
 }
 
-/* .carousel{
-    height: 50vh;
-} */
-
-#one{
-    justify-content: end;
-    align-items: flex-end;
+.content{
+    width: 100%;
 }
-/* #one{
-    position: relative;
-    bottom: 0;
-} */
+
+.aboutus h1{
+    font-family: Roboto;
+    font-weight: 700;
+}
+
+.feats{
+    display: inline;
+    color: #FFBB00;
+    background-color: #e4e0d3;
+    border-radius: 5px;
+}
+
+.download{
+    background-image: url("/images/bg2.png");
+    
+}
+
+.downloads{
+    margin-top: 3rem;
+}
 
 .ec-snurra img{
     padding: 2rem;
@@ -96,11 +129,44 @@ nav li{
     height: 42px;
 }
 
+.appstats{
+    background-image: url("/images/map.png");
+    height: 50vh;
+}
+
 .counter{
     margin-right: 2rem;
     padding: 2rem;
+    
 }
+
+.counter span {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.download{
+    overflow: hidden;
+}
+.animationbot img{
+    position: relative;
+    bottom: -150px;
+    
+}
+
+.contactus{
+    height: 10vh !important;
+}
+
+
 
 footer{
     height: 10rem;
+}
+footer img{
+    background-image: url("/images/bgfoot.png");
+    z-index: -1;
+    bottom: 0px;
+    /* left: -82px; */
+    position: absolute;
+    
 }
