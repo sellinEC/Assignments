@@ -15,6 +15,8 @@ html, body{
     /* position: relative; */
     background-image: url(/images/bgblue.png);
     background-repeat: no-repeat;
+    background-color: #FFFFFF;
+    
     
     
 }
@@ -32,6 +34,10 @@ h2{
     font-weight: 550;
     font-family: 'Roboto' sans-serif;
 }
+
+.btn {
+    text-transform: unset !important;
+  }
 
 .topside{
     height: 100vh;
@@ -175,6 +181,17 @@ a{
 .download{
     overflow: hidden;
 }
+
+.download h1{
+    color: white;
+}
+
+.download p {
+    color: white;
+    font-weight: 500;
+    font-size: .8em;
+    line-height: 200%;
+}
 .animationbot img{
     position: relative;
     bottom: -150px;
@@ -182,19 +199,65 @@ a{
 }
 
 .contactus{
-    height: 10vh !important;
+    /* height: 10vh !important; */
+}
+
+input {
+    /* outline: none !important; */
+    border: none !important;
+    text-decoration: none;
+    background-color: #FBFBFB !important;
+    color: #8A8A8A !important;
+    
+}
+
+
+textarea {
+    resize: none;
+    border: none !important;
+    background-color: #FBFBFB !important;
+    color: #8A8A8A !important;
+    font-weight: 500;
+    
+}
+
+.btn-info {
+    background-color: #3096FE !important;
+    padding: 1rem 4rem !important;
+    font-weight: 600;
 }
 
 
 
-footer{
+footer {
+    background-image: url(/images/bgfoot.png);
+}
+
+.socials ul {
+    list-style: none;
+}
+
+.socials ul li i{
+    padding: .5em .5em;
+    border: none;
+    border-radius: 30%;
+    color: white;
+    
+  
+}
+.socials ul li i:hover{
+    background-color: #62aaf1;
+  
+}
+
+/* footer{
     height: 10rem;
-}
-footer img{
+} */
+/* footer img{
     background-image: url("/images/bgfoot.png");
     z-index: -1;
     bottom: 0px;
-    /* left: -82px; */
+    left: -82px; 
     position: absolute;
     
-}
+} */
