@@ -27,6 +27,12 @@ h1{
     font-weight: 600;
 }
 
+h2{
+    color: black;
+    font-weight: 550;
+    font-family: 'Roboto' sans-serif;
+}
+
 .topside{
     height: 100vh;
 }
@@ -163,8 +169,8 @@ a{
 }
 
 .counter span {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 800;
 }
 .download{
     overflow: hidden;
