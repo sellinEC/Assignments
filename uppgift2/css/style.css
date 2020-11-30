@@ -105,6 +105,7 @@ a{
     color: #FFBB00;
     background-color: #e4e0d3;
     border-radius: 5px;
+    height: 1.5rem;
 }
 
 .download{
@@ -124,11 +125,25 @@ a{
     color: black;
 }
 
+
 .features .icons img{
     width: 42px;
     height: 42px;
 }
 
+.feats h1 {
+    color: black;
+}
+
+.text h3 {
+    color: black;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.text p{
+    font-size: .8em;
+}
 .appstats{
     background-image: url("/images/map.png");
     height: 50vh;
