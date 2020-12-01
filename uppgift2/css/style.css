@@ -257,7 +257,7 @@ footer {
 
 @media (max-width: 1024px) { 
     .container {
-        max-width: 100%;
+        max-width: 100% !important;
         margin-top: 3rem;
     }
 
@@ -297,5 +297,50 @@ footer {
      .counters {
          display: flex;
          flex-wrap: wrap;
+     }
+ }
+
+ @media (max-height: 360px) and (min-width: 740px) {
+     html,body {
+         font-size: 12px;
+         
+     }
+     h1{
+         color: #FBFBFB;
+     }
+     .ec-snurra{
+         display: none;
+     }
+
+    }
+  
+ @media (max-width: 736px){
+    .topside{
+        height: 80vh;
+    }
+    .counters {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+
+
+ @media (max-width: 414px){
+     html, body {
+         font-size: 12px;
+     }
+     .topside{
+         height: 100vh;
+         background-position: left !important;
+     }
+
+     .ezdownloads{
+         display: block;
+     }
+
+     .googles img {
+         height: 60px;
+         width: 120px;
      }
  }
