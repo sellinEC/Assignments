@@ -80,6 +80,11 @@ a{
     color:#FFBB00 !important;
 }
 
+.navbar-toggler-icon i{
+    color: #FFBB00;
+    font-size: 2rem;
+}
+
 
 .btn{
     border: 2px solid white;
@@ -250,14 +255,38 @@ footer {
   
 }
 
-/* footer{
-    height: 10rem;
-} */
-/* footer img{
-    background-image: url("/images/bgfoot.png");
-    z-index: -1;
-    bottom: 0px;
-    left: -82px; 
-    position: absolute;
-    
-} */
+@media (max-width: 1024px) { 
+    .container {
+        max-width: 100%;
+        margin-top: 3rem;
+    }
+
+    #bakis{
+        background-image: url(/images/screens.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 60vh;
+    }
+
+    .googles{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 3rem;
+    }
+
+     #showcase{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ec-snurra{
+        padding-top: 2rem;
+    }
+
+    .ezdownloads {
+        display: flex;
+        justify-content: center;
+    } 
+ }
+

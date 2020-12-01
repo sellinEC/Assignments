@@ -21,11 +21,11 @@
 <body>
 
     <div class="container">
-        <nav class="navbar navbar-expand-lg transparent p-3 ">
+        <nav class="navbar navbar-expand-xl transparent p-3 ">
             <a class="navbar-brand" href="#"><img src="/images/logo.png" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"><i class="fas fa-hamburger"></i></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav p-3 m-3">
@@ -53,9 +53,9 @@
         <!-- <img id="blueback" src="/images/bgblue.png" alt=""> -->
         <div class="contanier py-5">
             <!-- grid -->
-            <div class="container d-flex">
+            <div id="showcase" class="container d-flex">
                 <!-- Card -->
-                <div class="card card-image transparent row col-xl-6">
+                <div class="card card-image transparent row col-xl-6 col-lg-8">
 
                     <!-- Content -->
                     <div class="text-white d-flex align-items-center py-5 px-4 ">
@@ -77,7 +77,7 @@
                 </div>
 
                 <!-- Card -->
-                <div class="container d-flex col-xl-5 ">
+                <div class="container col-xl-5 d-xl-flex d-none">
 
                     <img src="images/landing.png" alt="">
                     <!-- <img src="images/iPhone X - Light.png" alt=""> -->
@@ -95,11 +95,13 @@
         <div class="ec-snurra col-xl-12 text-center">
             <img src="/images/ec-logo-mono.png" alt="">
             <img src="/images/ec-logo-mono.png" alt="">
-            <img src="/images/ec-logo-mono.png" alt="">
-            <img src="/images/ec-logo-mono.png" alt="">
+            <img class="d-lg-inline d-none" src="/images/ec-logo-mono.png" alt="">
+            <img class="d-xl-inline d-none" src="/images/ec-logo-mono.png" alt="">
         </div>
+
+        <!-- Aboutus -->
         <div class="content mt-5 d-flex justify-content-around">
-            <div class="animation mr-2 col-xl-4">
+            <div class="animation mr-2 col-xl-4 d-xl-inline d-none">
                 <img src="/images/easy.png" alt="">
             </div>
             <div class="aboutus col-xl-5">
@@ -113,7 +115,7 @@
                     and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
                     leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
                     with the release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
-                <div class="downloads">
+                <div class="ezdownloads">
                     <img src="/images/google.png" alt="">
                     <img src="/images/apple.png" alt="">
                 </div>
@@ -126,7 +128,7 @@
     <!-- Nåting galet med padding -->
     <div class="container mt-5">
         <div class="features d-flex justify-content-around">
-            <div class="container row col-xl-5">
+            <div class="container row col-xl-6 col-lg-12">
                 <div class="featsdiv">
                     <p class="feats">Features</p>
                 </div>
@@ -137,7 +139,7 @@
                     and
                     scrambled </p>
                 <div class="row col-xl-12">
-                    <div class="icons col-xl-6">
+                    <div class="icons col-xl-6 col-lg-5">
                         <a class="d-flex" href="#"><img src="/images/icon1.png" alt="">
                             <div class="text">
                                 <h3>Ease of search</h3>
@@ -145,7 +147,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="icons col-xl-6">
+                    <div class="icons col-xl-6 col-lg-5">
                         <a class="d-flex" href="#"><img src="/images/icon2.png" alt="">
                             <div class="text">
                                 <h3>Manage your ads</h3>
@@ -153,7 +155,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="icons col-xl-6">
+                    <div class="icons col-xl-6 col-lg-5">
                         <a class="d-flex" href="#"><img src="/images/icon3.png" alt="">
                             <div class="text">
                                 <h3>Ease main</h3>
@@ -161,7 +163,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="icons col-xl-6">
+                    <div class="icons col-xl-6 col-lg-5">
                         <a class="d-flex" href="#"><img src="/images/icon4.png" alt="">
                             <div class="text">
                                 <h3>Ongoing support</h3>
@@ -171,7 +173,7 @@
                     </div>
                 </div>
             </div>
-            <div class="animationer">
+            <div class="animationer d-xl-inline d-none">
                 <img src="/images/featphone.png" alt="">
             </div>
 
@@ -181,7 +183,7 @@
     <!-- APP SCREENS -->
 
     <div class="container p-3 mt-5 pt-5 d-flex justify-content-center">
-        <div class="appscreens text-center row col-xl-7 justify-content-center">
+        <div id="bakis" class="appscreens text-center row col-xl-7 justify-content-center">
             <div class="col-xl-12 p-2">
                 <h1>Application Screens</h1>
             </div>
@@ -191,7 +193,7 @@
                     has been the
                     industry's</p>
             </div>
-            <img src="images/screens.png" alt="">
+            <img class="d-xl-inline d-none" src="images/screens.png" alt="">
 
 
 
@@ -212,21 +214,25 @@
                         industry's</p>
                 </div>
             </div>
-            <div class="counters d-flex justify-content-between col-xl-10">
+            <div class="container counters d-flex justify-content-between col-xl-10">
                 <div class="counter">
-                    <p><span class="color-blue">+ 1430</span></p>
+                    <p><span class="color-blue"><span class="plus color-blue d-xl-inline d-none">+</span> 1430</span>
+                    </p>
                     <p>Clients</p>
                 </div>
                 <div class="counter">
-                    <p><span class="color-blue">+ 2430</span></p>
+                    <p><span class="color-blue"><span class="plus color-blue d-xl-inline d-none">+</span> 2430</span>
+                    </p>
                     <p>Beneficiaries</p>
                 </div>
                 <div class="counter">
-                    <p><span class="color-blue">+ 1430</span></p>
+                    <p><span class="color-blue"><span class="plus color-blue d-xl-inline d-none">+</span> 1430</span>
+                    </p>
                     <p>Positive reviews</p>
                 </div>
                 <div class="counter">
-                    <p><span class="color-blue">+ 10.430</span></p>
+                    <p><span class="color-blue"><span class="plus color-blue d-xl-inline d-none">+</span> 10.430</span>
+                    </p>
                     <p>Downloads</p>
                 </div>
             </div>
@@ -237,19 +243,19 @@
 
     <div class="download  d-flex mt-4 justify-content-center">
         <div class="downloadnow row justify-content-around">
-            <div class="downloads col-xl-7">
+            <div class=" container downloads col-xl-7">
                 <h1>Download the application now !
                     to enjoy its features</h1>
                 <p class="pt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
                     has been the
                     industry's standard dummy text ever since the 1500s.</p>
-                <div class="googles pt-5">
+                <div class="googles pt-5 ">
                     <img class="pr-3" src="/images/google.png" alt="">
                     <img src="/images/apple.png" alt="">
                 </div>
             </div>
         </div>
-        <div class="animationbot col-xl-4">
+        <div class="animationbot col-xl-4 d-xl-inline d-none">
             <img src="/images/download.png" alt="">
         </div>
     </div>
