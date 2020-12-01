@@ -290,3 +290,12 @@ footer {
     } 
  }
 
+ @media (max-width: 768px){
+     .topside{
+         height: 80vh;
+     }
+     .counters {
+         display: flex;
+         flex-wrap: wrap;
+     }
+ }
