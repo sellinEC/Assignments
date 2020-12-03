@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab&display=swap');
+// font-family: 'Bebas Neue', cursive;
+// font-family: 'Roboto Slab', serif;
+$font1: 'Roboto Slab', serif;
+$font2: 'Bebas Neue', cursive;
+$light-color: #f4f4f4;
+$dark-color: #c4c4c4;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $light-color;
+    font-family: $font1;
+    line-height: 1.6;
+}
+
+.container{
+    width: 100% !important;
+    display: flex;
+    height: 100vh;
+    
+    
+
+    form {
+        margin: auto;
+        box-shadow: 10px 10px 20px darkgray;
+        background-color: $dark-color;
+        padding: 2rem;
+        border-radius: 10px;
+    }
+    p{
+        font-family: $font2;
+        color: rgb(86, 97, 109);
+    }
+
+    .nyhetsbrev{
+        margin-left: 3rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .container{
+        padding: 0;
+    }
+    form{
+        padding: 0;
+    }
+    .nyhetsbrev{
+        margin: 0;
+    }
+}
+
+
+ 

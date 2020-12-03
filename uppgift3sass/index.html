@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <script src="https://kit.fontawesome.com/0abbda2fd3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <title>Form</title>
+</head>
+
+<body>
+
+
+    <div class="container border">
+        <form class="needs-validation"
+            oninput='up2.setCustomValidity(up2.value != up.value ? "Passwords do not match." : "")' novalidate>
+            <!-- Förnamn, efternamn -->
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationCustom01">Förnamn</label>
+                    <input type="text" class="form-control" id="validationCustom01" required>
+                    <div class="invalid-feedback">
+                        Ange förnamn
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationCustom02">Efternamn</label>
+                    <input type="text" class="form-control" id="validationCustom02" required>
+                    <div class="invalid-feedback">
+                        Ange efternamn
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email, Lösenor -->
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustom03">Email</label>
+                    <input type="email" class="form-control" id="validationCustom03" required>
+                    <div class="invalid-feedback">
+                        Ange emailadress
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="password1">Lösenord</label>
+                    <input id="password1" type="password" class="form-control" id="validationCustom04" required
+                        name="up">
+                    <div class="invalid-feedback">
+                        Ange lösenord
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="password2">Bekräfta lösenord</label>
+                    <input id="password2" type="password" class="form-control" id="validationCustom05" required
+                        name="up2">
+                    <div class="invalid-feedback">
+                        Bekräfta lösenord
+                    </div>
+                </div>
+            </div>
+            <!-- Adress -->
+            <div class="adresser"></div>
+            <p>Adress:</p>
+
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationCustom06">Gata</label>
+                    <input type="text" class="form-control" id="validationCustom06" required>
+                    <div class="invalid-feedback">
+                        Ange adress
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="validationCustom07">Postnummer</label>
+                    <input type="text" class="form-control" id="validationCustom07" required>
+                    <div class="invalid-feedback">
+                        Ange postnummer
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="validationCustom08">Land</label>
+                    <select class="custom-select" id="validationCustom04" required>
+                        <option selected disabled value="">Välj...</option>
+                        <option>Sverige</option>
+                        <option>Norge</option>
+                        <option>Danmark</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Ange land
+                    </div>
+                </div>
+
+            </div>
+            <p>Fakturaadress:</p>
+            <!-- Faktura adress -->
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationCustom09">Gata</label>
+                    <input type="text" class="form-control" id="validationCustom09" required>
+                    <div class="invalid-feedback">
+                        Ange adress
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="validationCustom10">Postnummer</label>
+                    <input type="text" class="form-control" id="validationCustom10" required>
+                    <div class="invalid-feedback">
+                        Ange postnummer
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="validationCustom11">Land</label>
+                    <select class="custom-select" id="validationCustom04" required>
+                        <option selected disabled value="">Välj...</option>
+                        <option>Sverige</option>
+                        <option>Norge</option>
+                        <option>Danmark</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Ange land
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="gdpr form-group d-flex">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                        Jag godkänner användarvillkoren enligt <a
+                            href="https://webbplatsen.se/allmanna-villkor/">GDPR</a>
+                    </label>
+                    <div class="invalid-feedback">
+                        Villkor måste godkännas före registrering
+                    </div>
+                </div>
+                <div class="nyhetsbrev">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
+                    <label class="" for="">
+                        Ja tack, skriv upp mig på nyhetsbrevet
+                    </label>
+
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Registrera</button>
+        </form>
+
+    </div>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
