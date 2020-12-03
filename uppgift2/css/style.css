@@ -12,7 +12,6 @@ html, body{
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     line-height: 1.7;
-    /* position: relative; */
     background-image: url(/images/bgblue.png);
     background-repeat: no-repeat;
     background-size: auto;
@@ -118,7 +117,6 @@ a:hover {
 }
 
 .aboutus h1{
-    /* font-family: 'Roboto', sans-serif; */
     font-weight: 700;
 }
 
@@ -206,12 +204,9 @@ a:hover {
     
 }
 
-.contactus{
-    /* height: 10vh !important; */
-}
 
 input {
-    /* outline: none !important; */
+
     border: none !important;
     text-decoration: none;
     background-color: #FBFBFB !important;
@@ -315,18 +310,7 @@ footer {
     }
  }
 
- /* @media (max-height: 360px) and (min-width: 740px) {
-     html,body {
-         font-size: 12px;
-         
-     }
-     h1{
-         /* color: #FBFBFB; 
-     }
 
-     /* .ec-snurra{ */
-         /* display: none; */
-     /* } */
 
     
   
@@ -382,7 +366,6 @@ footer {
          font-size: 11px;
      }
     .counters {
-        /* padding: 0; */
         max-width: 100% !important;
         display: flex;
         flex-wrap: wrap;
@@ -399,7 +382,6 @@ footer {
     }
   
    .counters {
-       /* padding: 0; */
        max-width: 100% !important;
        display: flex;
        flex-wrap: wrap;

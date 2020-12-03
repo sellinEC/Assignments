@@ -34,7 +34,6 @@ li{
     border-bottom: 1px solid gray;
     background-color: #F7F7F7;
     display: flex;
-    /* justify-content: space-evenly; */
     align-items: center;
     padding: .5rem;
     height: 1.5rem;
@@ -58,26 +57,18 @@ li{
 }
 
 .social{
-    /* position: relative; */
     margin-right: 10%;
     margin-left: auto;
-    /* padding-bottom: 1rem; */
-    /* border: 1px solid black; */
-    /* justify-content: center; */
     margin-top: 1rem;
 }
 .social li{
     color: var(--blue);
     padding-bottom: 1rem;
     padding-right: 1.5rem;
-    /* padding-bottom: 1rem; */
-    /* margin-right: 10px; */
-    
 }
 
 .social ul{
     display: flex;
-    /* padding-bottom: 1.5rem; */
     
 }
 a{
@@ -101,8 +92,7 @@ a{
 }
 
 .navbar{
-    /* padding: 1rem; */
-    /* padding-top: ; */
+
     margin-right: 10%;
 }
 
@@ -188,7 +178,7 @@ a{
 .picture{
     margin-top: 1rem;
     height: 10rem;
-    /* background-color: ; */
+
 }
 #picture{
     justify-content: center;
@@ -209,8 +199,7 @@ h3{
     background-color: #FFFFFF;
     justify-content: center;
     display: flex;
-    /* border: 1px solid black; */
-    /* justify-content: space-between; */
+
     
 }
 hr{
@@ -223,7 +212,7 @@ hr{
     font-size: 1.1rem;
     width: 40%;
     margin-left: 5rem;
-    /* border: 1px solid black; */
+
    
 }
 #modern{
@@ -231,14 +220,14 @@ hr{
     font-weight: 400px;
     padding-top: 5rem;
     width: 70%;
-    /* padding-left: .5rem; */
+
     font-size: 1.8rem;
-    /* flex-basis: 20%; */
+
     margin-right: auto;
     margin-bottom: 0;
-    /* text-align: center; */
+
     padding-bottom: 0;
-    /* border: 1px solid black; */
+
     
 }
 .parags{
@@ -254,9 +243,7 @@ p{
 .img2{
     width: 40%;
     margin-top: 1rem;
-    /* margin-right: ; */
-    /* margin-left: 0; */
-    /* border: 1px solid black; */
+
 }
 
 .counter{
@@ -264,15 +251,14 @@ p{
     width: 30%;
     display: inline-block;
     font-size: 1.0rem;
-    /* font-weight: 00px; */
+
     padding-top: 1rem;
     margin-top: 2rem;
     margin-bottom: 0;
-    /* border: 1px solid black; */
-    /* justify-content: space-evenly; */
+
 }
 .counter p{
-    /* display: block; */
+
     font-weight: 800px;
     font-family: roboto slab;
 }
@@ -287,7 +273,7 @@ p{
 }
 .services{
     display: flex;
-    /* border: 1px solid black; */
+
     padding: 11%;
     padding-top: 5%;
     text-align: center;
@@ -309,34 +295,26 @@ p{
 
 .contain{
     box-sizing: border-box;
-    /* border: 1px solid black; */
     display: flex;
     flex-wrap: wrap;
-    /* flex-basis: 10%; */
     justify-content: space-evenly;
-    /* padding: 2rem; */
 }
 
 .card  {
     border-radius: 10px;
     font-size: 18px;
     font-weight: 500;
-    /* font-family: Roboto; */
     background-color: #FFFFFF;
     display: flex;
     flex: 0 0 31%;
     height: 436px;
     width: 450px;
-    /* padding:1rem; */
     margin-left: 1rem;
     margin-bottom: 2rem;
-    /* justify-content: center; */
-    /* align-items: center; */
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    /* text-align: center; */
     
 }
 

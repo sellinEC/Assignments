@@ -16,13 +16,10 @@
 
 }
 
-/* font-family: 'Roboto', sans-serif;
 
-font-family: 'Roboto Slab', serif; */
 
 *{
     box-sizing: border-box;
-    /* margin: 0; */
 
 }
 
@@ -67,7 +64,7 @@ header, section, footer{
     display: grid;
     grid-template-columns: repeat(1, minmax(auto, 450px));
     grid-gap: 1rem;
-    /* justify-content: center; */
+
 }
 
 .navbar {
@@ -92,7 +89,7 @@ header, section, footer{
 }
 
 .toggler{
-    /* padding: 0.25rem 0.75rem; */
+
     font-size: 1.3rem;
     background-color: transparent;
     border: 1px solid transparent;
@@ -103,11 +100,7 @@ header, section, footer{
     align-items: center;
     flex-grow: 1;
 }
-/* .collapsepad-collapse{
-    flex-basis: 100%;
-    align-items: center;
-    flex-grow: 1;
-} */
+
 
 .navbar-nav{
     display: flex;
@@ -125,7 +118,6 @@ header, section, footer{
 #showcase .container{
     background-color: var(--placehold1);
     font-size: .8rem;
-    /* color: var(--text); */
     padding: 1rem;
 }
 #showcase .container h1{
@@ -144,9 +136,6 @@ header, section, footer{
     font-weight: 600;
 }
 
-/* #aboutus {
-
-} */
 
 #aboutus span{
     color: var(--blue);
@@ -161,7 +150,6 @@ header, section, footer{
     font-family: Roboto Slab;
     font-size: 1.3rem;
     font-weight: 600;
-    /* margin-top: 5px; */
     margin-bottom: 0;
     line-height: 0;
 }
@@ -199,30 +187,19 @@ header, section, footer{
 }
 
 .card  {
-    /* border-radius: 10px; */
-    /* font-size: 18px; */
+
     font-weight: 500;
     font-family: Roboto;
     background-color: #FFFFFF;
     display: flex;
     flex: 0 0 31%;
-    /* height: 436px; */
-    /* width: 450px; */
-    /* padding:1rem; */
-    /* margin-left: 1rem; */
-    /* margin-bottom: 2rem; */
-    /* justify-content: center; */
-    /* align-items: center; */
     flex-wrap: wrap;
     flex-direction: column;
-    /* justify-self: center; */
     align-content: center;
-    /* text-align: center; */
     
 }
 
 .card h3{
-    /* font-family: var(--slab); */
     font-size: 22px;
     color: var(--title);
     margin-top: 3rem;
@@ -245,8 +222,6 @@ header, section, footer{
 
 
 #appointment{
-    /* alt "opacity:80%" */
-   
    color: #f3fbbf;
    font-family: 'Roboto', sans-serif;
 
@@ -338,14 +313,10 @@ footer{
         font-weight: 400px;
         padding-top: 5rem;
         width: 70%;
-        /* padding-left: .5rem; */
         font-size: 1.8rem;
-        /* flex-basis: 20%; */
         margin-right: auto;
         margin-bottom: 0;
-        /* text-align: center; */
         padding-bottom: 0;
-        /* border: 1px solid black; */
     }
 
     .parags{
