@@ -5,6 +5,7 @@ $font1: 'Roboto Slab', serif;
 $font2: 'Bebas Neue', cursive;
 $light-color: #f4f4f4;
 $dark-color: #c4c4c4;
+$contrast-color: #d6cbcb;
 
 *{
     box-sizing: border-box;
@@ -33,8 +34,13 @@ body {
         border-radius: 10px;
     }
     p{
+        margin: .5rem 0rem;
         font-family: $font2;
         color: rgb(86, 97, 109);
+        background-color: $contrast-color;
+        padding-left: 0.3rem;
+        font-size: 1.2rem;
+        
     }
 
     .nyhetsbrev{
