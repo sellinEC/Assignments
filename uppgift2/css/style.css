@@ -334,6 +334,8 @@ footer {
     .topside{
         height: 80vh;
     }
+
+
     .counters {
         display: flex;
         flex-wrap: wrap;
@@ -344,11 +346,16 @@ footer {
 
  @media (max-width: 414px){
      html, body {
-         font-size: 11px;
+         font-size: 12px;
      }
      .topside{
-         height: 100vh;
+         height: 30rem;
          background-position: left !important;
+     }
+
+     .topside a{
+         display: block;
+         text-align: center;
      }
 
      .ezdownloads{
