@@ -69,6 +69,11 @@ a:hover {
     color: #FFBB00 !important;
 }
 
+.dwns:hover{
+    box-shadow: 2px 3px 30px #8A8A8A;
+    transition: 0.3s ease-in-out;
+}
+
 .nav-item a:hover:after {
     content: ""; /* This is necessary for the pseudo element to work. */ 
     display: block; /* This will put the pseudo element on its own line. */
