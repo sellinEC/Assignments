@@ -319,8 +319,10 @@ p{
 }
 
 .card:hover{
-    transition-delay: .3s;
+    transition-delay: .4s;
     box-shadow: 5px 5px 30px rgba(98, 98, 98, .2);
+    
+
 
 }
 
@@ -345,8 +347,9 @@ p{
     align-items: center;
 }
 
-.circle:hover{
+.card:hover .circle{
     background-color: var(--blue);
+    box-shadow: 1px 1px 10px var(--text);
 }
 
 .text{
