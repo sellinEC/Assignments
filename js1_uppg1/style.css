@@ -1,0 +1,103 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  max-width: 100%;
+  
+}
+
+.header{
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 1rem 2rem;
+}
+
+h2{
+  margin: 0;
+}
+
+.form {
+  padding: 1rem 1rem;
+}
+
+.form-control {
+  margin-bottom: .5rem;
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  padding: .5rem;
+  font-family: inherit;
+  width: 100%;
+}
+
+.form-control.success input{
+  border-color: #2ecc71;
+}
+.form-control.error input{
+  border-color: #e74c3c;
+}
+
+.form-control i {
+  visibility: hidden;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+
+}
+.form-control.success i#success{
+  visibility: visible;
+  color: #2ecc71;
+}
+.form-control.error i#error{
+  visibility: visible;
+  color: #e74c3c;
+}
+
+.form-control small {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+}
+.form-control.error small {
+  visibility: visible;
+  color: #e74c3c;
+}
+
+button {
+  background-color: aqua;
+  border: 2px solid aqua;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.2rem;
+  display: block;
+  font-family: inherit;
+  width: 100%;
+  padding: 0.7 1rem;
+  margin-bottom: 1rem;
+}
