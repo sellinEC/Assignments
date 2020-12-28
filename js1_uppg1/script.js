@@ -1,8 +1,12 @@
+const users = [
+]
+
 const form = document.getElementById('form');
-button = document.getElementById('button')
+const button = document.getElementById('button')
 const namn = document.getElementById('namn');
 const efternamn = document.getElementById('efternamn');
 const email = document.getElementById('email');
+const output = document.getElementById('users')
 
 
 button.addEventListener('click', (e) => {
@@ -43,6 +47,21 @@ function checkInputs() {
   } else {
     setSuccessFor(email);
   }
+
+  //add user:
+  let elementsArray = document.getElementsByClassName("success");
+
+  if (elementsArray.length === 3) {
+    addUser();
+    console.log(users);
+    listUsers();
+    namn.value = ''
+    efternamn.value = ''
+    email.value = ''
+
+
+  }
+
 }
 
 function setErrorFor(input, message) {
@@ -63,3 +82,27 @@ function setSuccessFor(input) {
 function isEmail(email) {
   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
+
+function listUsers() {
+  output.innerHTML = ''
+  users.forEach(user => {
+    output.innerHTML += `<div id='${user.id} class="user">
+    <p>${user.namn} ${user.efternamn}</p>
+    <p id="small">${user.email}</p>
+  </div>`
+  })
+
+}
+
+function addUser() {
+  let user = {
+    id: Date.now().toString(),
+    namn: namn.value.trim(),
+    efternamn: efternamn.value.trim(),
+    email: email.value.trim()
+  }
+  users.push(user);
+  listUsers();
+}
+
+console.log(users);

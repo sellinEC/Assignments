@@ -102,3 +102,12 @@ button {
   padding: 0.7 1rem;
   margin-bottom: 1rem;
 }
+
+.user{
+  padding-top: .5rem;
+  
+}
+
+#small {
+  font-size: 0.8rem;
+}
