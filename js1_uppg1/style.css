@@ -65,8 +65,9 @@ h2{
 .form-control i {
   visibility: hidden;
   position: absolute;
-  top: 40px;
-  right: 10px;
+  top: 45px;
+  right: 15px;
+  font-size: 1.5rem;
 
 }
 .form-control.success i#success{
