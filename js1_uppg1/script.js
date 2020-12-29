@@ -1,4 +1,22 @@
-const users = [
+let users = [
+  // {
+  //   id: '1',
+  //   namn: 'Förnamn',
+  //   efternamn: 'Efternamn',
+  //   email: 'Email@domain.ca'
+  // },
+  // {
+  //   id: '2',
+  //   namn: 'Ronnt',
+  //   efternamn: 'Jansson',
+  //   email: 'Email@domain.se'
+  // },
+  // {
+  //   id: '3',
+  //   namn: 'Fernamn',
+  //   efternamn: 'Aftternamn',
+  //   email: 'Email@domain.com'
+  // }
 ]
 
 const form = document.getElementById('form');
@@ -52,13 +70,12 @@ function checkInputs() {
   let elementsArray = document.getElementsByClassName("success");
 
   if (elementsArray.length === 3) {
-    addUser();
-    console.log(users);
-    listUsers();
+    addUser()
+    console.log("added user");
+    console.log(elementsArray);
     namn.value = ''
     efternamn.value = ''
     email.value = ''
-
 
   }
 
@@ -86,7 +103,7 @@ function isEmail(email) {
 function listUsers() {
   output.innerHTML = ''
   users.forEach(user => {
-    output.innerHTML += `<div id='${user.id} class="user">
+    output.innerHTML += `<div class="user">
     <p>${user.namn} ${user.efternamn}</p>
     <p id="small">${user.email}</p>
   </div>`
@@ -105,4 +122,4 @@ function addUser() {
   listUsers();
 }
 
-console.log(users);
+listUsers();
