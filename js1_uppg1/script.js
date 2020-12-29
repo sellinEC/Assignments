@@ -1,22 +1,5 @@
 let users = [
-  // {
-  //   id: '1',
-  //   namn: 'Förnamn',
-  //   efternamn: 'Efternamn',
-  //   email: 'Email@domain.ca'
-  // },
-  // {
-  //   id: '2',
-  //   namn: 'Ronnt',
-  //   efternamn: 'Jansson',
-  //   email: 'Email@domain.se'
-  // },
-  // {
-  //   id: '3',
-  //   namn: 'Fernamn',
-  //   efternamn: 'Aftternamn',
-  //   email: 'Email@domain.com'
-  // }
+
 ]
 
 const form = document.getElementById('form');
@@ -71,8 +54,6 @@ function checkInputs() {
 
   if (elementsArray.length === 3) {
     addUser()
-    console.log("added user");
-    console.log(elementsArray);
     namn.value = ''
     efternamn.value = ''
     email.value = ''
@@ -122,4 +103,3 @@ function addUser() {
   listUsers();
 }
 
-listUsers();
