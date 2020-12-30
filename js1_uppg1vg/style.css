@@ -102,6 +102,11 @@ button {
   padding: 0.7 1rem;
   margin-bottom: 1rem;
 }
+#save {
+  visibility: hidden;
+  background-color: orange;
+  border: 2px solid orange;
+}
 
 .users {
   position: relative;
@@ -134,3 +139,4 @@ button {
   color: orange;
 
 }
+
