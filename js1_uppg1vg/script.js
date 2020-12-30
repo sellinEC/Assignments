@@ -24,9 +24,9 @@ const button = document.getElementById('button')
 const namn = document.getElementById('namn');
 const efternamn = document.getElementById('efternamn');
 const email = document.getElementById('email');
-const output = document.getElementById('users');
+const output = document.querySelector('#users');
 const edit = document.getElementById('edit')
-const deleted = document.getElementById('delete')
+// const deleted = document.querySelector('#delete')
 
 
 button.addEventListener('click', (e) => {
@@ -129,11 +129,14 @@ function addUser() {
 }
 
 output.addEventListener('click', (e) => {
-  console.log(e.target.parentElement.id);
-  console.log(e);
-  users = users.filter(user => user.id !== e.target.parentElement.id);
+  if (e.target.id === "delete") {
+    console.log(e.target.parentElement.parentElement.id);
+    console.log(e);
+    users = users.filter(user => user.id !== e.target.parentElement.id);
 
-  listUsers();
+    listUsers();
+  }
+
 })
 
 // output.addEventListener('click', (e) => {
