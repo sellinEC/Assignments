@@ -1,22 +1,22 @@
 let users = [
-  {
-    id: "1",
-    namn: 'Förnamn',
-    efternamn: 'Efternamn',
-    email: 'förnamn.efternamn@mail.com'
-  },
-  {
-    id: "2",
-    namn: 'Förnamn2',
-    efternamn: 'Efternamn2',
-    email: 'förnamn2.efternamn2@mail.com'
-  },
-  {
-    id: "3",
-    namn: 'Förnamn3',
-    efternamn: 'Efternamn3',
-    email: 'förnamn3.efternamn3@mail.com'
-  }
+  // {
+  //   id: "1",
+  //   namn: 'Förnamn',
+  //   efternamn: 'Efternamn',
+  //   email: 'förnamn.efternamn@mail.com'
+  // },
+  // {
+  //   id: "2",
+  //   namn: 'Förnamn2',
+  //   efternamn: 'Efternamn2',
+  //   email: 'förnamn2.efternamn2@mail.com'
+  // },
+  // {
+  //   id: "3",
+  //   namn: 'Förnamn3',
+  //   efternamn: 'Efternamn3',
+  //   email: 'förnamn3.efternamn3@mail.com'
+  // }
 ]
 
 const form = document.getElementById('form');
@@ -63,29 +63,65 @@ function checkInputs() {
   if (emailInput === '') {
 
     setErrorFor(email, 'Skriv din email')
-  } else if (!isEmail(emailInput)) {
-    setErrorFor(email, 'Ogiltig mailadress')
-  } else {
+  } else if (isEmail(emailInput)) {
+    console.log("is email");
     if (isUser(emailInput)) {
-      setErrorFor(email, 'Användaren existerar redan')
+      console.log("ERRORRRR!!!!");
+      // setErrorFor(email, 'Användaren existerar redan');
+
     } else {
+
       setSuccessFor(email);
+      let elementsArray = document.getElementsByClassName("success");
+
+      if (elementsArray.length === 3) {
+        addUser()
+        // namn.value = ''
+        // efternamn.value = ''
+        // email.value = ''
+
+
+      }
     }
+  } else {
+    setErrorFor(email, 'Ogiltig email');
+
+
+    // if (isUser(emailInput)) {
+    //   console.log('existerar');
+    //   setErrorFor(email, 'Användaren existerar redan');
+
+    // } else {
+
+    //   setSuccessFor(email);
+    //   console.log('New user');
+    // }
+    // switch (!isUser(emailInput)) {
+    //   case true:
+    //     setSuccessFor(email);
+    //     console.log('New user');
+    //     break;
+
+    //   default:
+    //     console.log('existerar');
+    //     setErrorFor(email, 'Användaren existerar redan');
+    //     break;
+    // }
 
   }
 
 
   //add user:
-  let elementsArray = document.getElementsByClassName("success");
+  // let elementsArray = document.getElementsByClassName("success");
 
-  if (elementsArray.length === 3) {
-    addUser()
-    namn.value = ''
-    efternamn.value = ''
-    email.value = ''
+  // if (elementsArray.length === 3) {
+  //   addUser()
+  //   namn.value = ''
+  //   efternamn.value = ''
+  //   email.value = ''
 
 
-  }
+  // }
 
 }
 
@@ -94,53 +130,53 @@ saveBtn.addEventListener('click', (e) => {
   checkEditedInputs()
 })
 
-function checkEditedInputs() {
-  const namnInput = namn.value.trim()
-  const efternamnInput = efternamn.value.trim()
-  const emailInput = email.value.trim()
+// function checkEditedInputs() {
+//   const namnInput = namn.value.trim()
+//   const efternamnInput = efternamn.value.trim()
+//   const emailInput = email.value.trim()
 
-  if (namnInput === '') {
-    setErrorFor(namn, 'Du måste skriva ditt namn')
-  } else {
-    setSuccessFor(namn);
-  }
-  if (efternamnInput === '') {
+//   if (namnInput === '') {
+//     setErrorFor(namn, 'Du måste skriva ditt namn')
+//   } else {
+//     setSuccessFor(namn);
+//   }
+//   if (efternamnInput === '') {
 
-    setErrorFor(efternamn, 'Du måste skriva ditt efternamn')
-  } else {
+//     setErrorFor(efternamn, 'Du måste skriva ditt efternamn')
+//   } else {
 
-    setSuccessFor(efternamn);
-  }
+//     setSuccessFor(efternamn);
+//   }
 
-  if (emailInput === '') {
+//   if (emailInput === '') {
 
-    setErrorFor(email, 'Skriv din email')
-  } else if (!isEmail(emailInput)) {
-    setErrorFor(email, 'Ogiltig mailadress')
+//     setErrorFor(email, 'Skriv din email')
+//   } else if (!isEmail(emailInput)) {
+//     setErrorFor(email, 'Ogiltig mailadress')
 
-  } else if (isUser(emailInput)) {
-    console.log('mails');
-    setErrorFor(email, 'Användaren redan registrerad')
-
-
-  } else {
-    setSuccessFor(email);
-  }
+//   } else if (isUser(emailInput)) {
+//     console.log('mails');
+//     setErrorFor(email, 'Användaren redan registrerad')
 
 
-  //add user:
-  let elementsArray = document.getElementsByClassName("success");
-
-  if (elementsArray.length === 3) {
-    addEditedUser()
-    namn.value = ''
-    efternamn.value = ''
-    email.value = ''
+//   } else {
+//     setSuccessFor(email);
+//   }
 
 
-  }
+//add user:
+// let elementsArray = document.getElementsByClassName("success");
 
-}
+// if (elementsArray.length === 3) {
+//   addEditedUser()
+//   namn.value = ''
+//   efternamn.value = ''
+//   email.value = ''
+
+
+// }
+
+
 
 
 function setErrorFor(input, message) {
@@ -164,8 +200,13 @@ function isEmail(email) {
 
 function isUser(input) {
   users.forEach(user => {
-    if (user.email === input) {
-      return true
+    let mail = user.email
+    if (mail === input) {
+      console.log("ANVÄNDAREN EXISTERAR!");
+      return true;
+    } else {
+      console.log('Ny användare!');
+      return false;
     }
   });
 }
@@ -237,4 +278,6 @@ function editUser(target) {
   saveBtn.style.visibility = 'visible'
 }
 
-listUsers()
+// listUsers()
+
+// isUser('förnamn3.efternamn3@mail.com')
