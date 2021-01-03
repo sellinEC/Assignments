@@ -1,22 +1,22 @@
 let users = [
-  {
-    id: "1",
-    namn: 'Förnamn',
-    efternamn: 'Efternamn',
-    email: 'förnamn.efternamn@mail.com'
-  },
-  {
-    id: "2",
-    namn: 'Förnamn2',
-    efternamn: 'Efternamn2',
-    email: 'förnamn2.efternamn2@mail.com'
-  },
-  {
-    id: "3",
-    namn: 'Förnamn3',
-    efternamn: 'Efternamn3',
-    email: 'förnamn3.efternamn3@mail.com'
-  }
+  // {
+  //   id: "1",
+  //   namn: 'Förnamn',
+  //   efternamn: 'Efternamn',
+  //   email: 'förnamn.efternamn@mail.com'
+  // },
+  // {
+  //   id: "2",
+  //   namn: 'Förnamn2',
+  //   efternamn: 'Efternamn2',
+  //   email: 'förnamn2.efternamn2@mail.com'
+  // },
+  // {
+  //   id: "3",
+  //   namn: 'Förnamn3',
+  //   efternamn: 'Efternamn3',
+  //   email: 'förnamn3.efternamn3@mail.com'
+  // }
 ]
 
 const form = document.getElementById('form');
@@ -85,6 +85,7 @@ function checkInputs() {
         namn.value = ''
         efternamn.value = ''
         email.value = ''
+        console.log(users);
 
 
       }
@@ -146,7 +147,7 @@ function checkEditedInputs() {
 }
 
 function removeUser(position) {
-  delete users[position]
+  users.splice(position, 1);
 }
 
 
@@ -217,8 +218,8 @@ function editUser(target) {
   email.value = target.email;
   userId = target.id;
   position = findIndex(userId);
-  console.log(position);
-  console.log(userId);
+  console.log("vid position" + " " + position);
+  console.log("id: " + userId);
   saveBtn.style.visibility = 'visible'
 }
 
@@ -262,8 +263,8 @@ function isUser(input) {
 function findIndex(id) {
   for (let i = 0; i < users.length; i++) {
     const usr = users[i];
-    if (usr.id == id) {
-      console.log(users.indexOf(usr));
+    if (usr.id === id) {
+      return users.indexOf(usr);
     }
 
   }
@@ -282,5 +283,7 @@ function findIndex(id) {
 
 
 listUsers()
+// removeUser(1)
+// console.log(users);
 
 // console.log(Boolean(isUser("förnamn3.efternamn3@mail.com")));
