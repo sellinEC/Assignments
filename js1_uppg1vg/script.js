@@ -1,22 +1,22 @@
 let users = [
-  // {
-  //   id: "1",
-  //   namn: 'Förnamn',
-  //   efternamn: 'Efternamn',
-  //   email: 'förnamn.efternamn@mail.com'
-  // },
-  // {
-  //   id: "2",
-  //   namn: 'Förnamn2',
-  //   efternamn: 'Efternamn2',
-  //   email: 'förnamn2.efternamn2@mail.com'
-  // },
-  // {
-  //   id: "3",
-  //   namn: 'Förnamn3',
-  //   efternamn: 'Efternamn3',
-  //   email: 'förnamn3.efternamn3@mail.com'
-  // }
+  {
+    id: "1",
+    namn: 'Förnamn',
+    efternamn: 'Efternamn',
+    email: 'förnamn.efternamn@mail.com'
+  },
+  {
+    id: "2",
+    namn: 'Förnamn2',
+    efternamn: 'Efternamn2',
+    email: 'förnamn2.efternamn2@mail.com'
+  },
+  {
+    id: "3",
+    namn: 'Förnamn3',
+    efternamn: 'Efternamn3',
+    email: 'förnamn3.efternamn3@mail.com'
+  }
 ]
 
 const form = document.getElementById('form');
@@ -26,6 +26,9 @@ const namn = document.getElementById('namn');
 const efternamn = document.getElementById('efternamn');
 const email = document.getElementById('email');
 const output = document.querySelector('#users');
+
+let position = 0
+let userId = 0
 
 
 // const deleted = document.querySelector('#delete')
@@ -91,71 +94,60 @@ function checkInputs() {
 
   }
 
-
-  //add user:
-  // let elementsArray = document.getElementsByClassName("success");
-
-  // if (elementsArray.length === 3) {
-  //   addUser()
-  //   namn.value = ''
-  //   efternamn.value = ''
-  //   email.value = ''
-
-
-  // }
-
 }
 
-// saveBtn.addEventListener('click', (e) => {
-//   e.preventDefault()
-//   checkEditedInputs()
-// })
+saveBtn.addEventListener('click', (e) => {
+  e.preventDefault()
+  checkEditedInputs()
+})
 
-// function checkEditedInputs() {
-//   const namnInput = namn.value.trim()
-//   const efternamnInput = efternamn.value.trim()
-//   const emailInput = email.value.trim()
+function checkEditedInputs() {
+  const namnInput = namn.value.trim()
+  const efternamnInput = efternamn.value.trim()
+  const emailInput = email.value.trim()
 
-//   if (namnInput === '') {
-//     setErrorFor(namn, 'Du måste skriva ditt namn')
-//   } else {
-//     setSuccessFor(namn);
-//   }
-//   if (efternamnInput === '') {
+  if (namnInput === '') {
+    setErrorFor(namn, 'Namn kan inte vara tomt')
+  } else {
+    setSuccessFor(namn);
+  }
+  if (efternamnInput === '') {
 
-//     setErrorFor(efternamn, 'Du måste skriva ditt efternamn')
-//   } else {
+    setErrorFor(efternamn, 'Efternamn kan inte vara tomt')
+  } else {
 
-//     setSuccessFor(efternamn);
-//   }
+    setSuccessFor(efternamn);
+  }
 
-//   if (emailInput === '') {
+  if (emailInput === '') {
 
-//     setErrorFor(email, 'Skriv din email')
-//   } else if (!isEmail(emailInput)) {
-//     setErrorFor(email, 'Ogiltig mailadress')
+    setErrorFor(email, 'Fältet kan inte lämnas tomt')
+  } else if (!isEmail(emailInput)) {
+    setErrorFor(email, 'Ogiltig mailadress')
 
-//   } else if (isUser(emailInput)) {
-//     console.log('mails');
-//     setErrorFor(email, 'Användaren redan registrerad')
-
-
-//   } else {
-//     setSuccessFor(email);
-//   }
+  } else {
+    setSuccessFor(email);
+  }
 
 
-//add user:
-// let elementsArray = document.getElementsByClassName("success");
+  // add user:
+  let elementsArray = document.getElementsByClassName("success");
 
-// if (elementsArray.length === 3) {
-//   addEditedUser()
-//   namn.value = ''
-//   efternamn.value = ''
-//   email.value = ''
+  if (elementsArray.length === 3) {
+    removeUser(position)
+    console.log(users);
+    addEditedUser(position)
+    namn.value = ''
+    efternamn.value = ''
+    email.value = ''
 
 
-// }
+  }
+}
+
+function removeUser(position) {
+  delete users[position]
+}
 
 
 
@@ -186,13 +178,13 @@ function isEmail(email) {
 function listUsers() {
   output.innerHTML = ''
   users.forEach(user => {
-    output.innerHTML += `<div id="${user.id}" class="user">
+    output.innerHTML += `<div div id = "${user.id}" class= "user" >
     <p>${user.namn} ${user.efternamn}</p>
 
     <p id="small">${user.email}</p>
     <i class="fas fa-pen-square" id="edit"></i>
     <i class="far fa-times-circle" id="delete"></i>
-  </div>`
+  </div > `
   })
 
 }
@@ -208,14 +200,14 @@ function addUser() {
   listUsers();
 }
 
-function addEditedUser(id) {
+function addEditedUser(position) {
   let user = {
-    id: id,
+    id: userId,
     namn: namn.value.trim(),
     efternamn: efternamn.value.trim(),
     email: email.value.trim()
   }
-  users.push(user);
+  users.splice(position, 0, user);
   listUsers();
 }
 
@@ -223,6 +215,10 @@ function editUser(target) {
   namn.value = target.namn
   efternamn.value = target.efternamn
   email.value = target.email;
+  userId = target.id;
+  position = findIndex(userId);
+  console.log(position);
+  console.log(userId);
   saveBtn.style.visibility = 'visible'
 }
 
@@ -263,6 +259,16 @@ function isUser(input) {
   }
 }
 
+function findIndex(id) {
+  for (let i = 0; i < users.length; i++) {
+    const usr = users[i];
+    if (usr.id == id) {
+      console.log(users.indexOf(usr));
+    }
+
+  }
+}
+
 // users.forEach(user => {
 
 //   if (user.email == input) {
@@ -275,6 +281,6 @@ function isUser(input) {
 // });
 
 
-// listUsers()
+listUsers()
 
 // console.log(Boolean(isUser("förnamn3.efternamn3@mail.com")));
