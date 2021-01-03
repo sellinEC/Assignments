@@ -27,6 +27,7 @@ const efternamn = document.getElementById('efternamn');
 const email = document.getElementById('email');
 const output = document.querySelector('#users');
 
+
 // const deleted = document.querySelector('#delete')
 
 
@@ -35,6 +36,8 @@ button.addEventListener('click', (e) => {
   e.preventDefault();
 
   checkInputs();
+
+
 });
 
 function checkInputs() {
@@ -63,11 +66,11 @@ function checkInputs() {
   if (emailInput === '') {
 
     setErrorFor(email, 'Skriv din email')
+
   } else if (isEmail(emailInput)) {
-    console.log("is email");
+
     if (isUser(emailInput)) {
-      console.log("ERRORRRR!!!!");
-      // setErrorFor(email, 'Användaren existerar redan');
+      setErrorFor(email, 'Användaren existerar redan');
 
     } else {
 
@@ -76,37 +79,15 @@ function checkInputs() {
 
       if (elementsArray.length === 3) {
         addUser()
-        // namn.value = ''
-        // efternamn.value = ''
-        // email.value = ''
+        namn.value = ''
+        efternamn.value = ''
+        email.value = ''
 
 
       }
     }
   } else {
     setErrorFor(email, 'Ogiltig email');
-
-
-    // if (isUser(emailInput)) {
-    //   console.log('existerar');
-    //   setErrorFor(email, 'Användaren existerar redan');
-
-    // } else {
-
-    //   setSuccessFor(email);
-    //   console.log('New user');
-    // }
-    // switch (!isUser(emailInput)) {
-    //   case true:
-    //     setSuccessFor(email);
-    //     console.log('New user');
-    //     break;
-
-    //   default:
-    //     console.log('existerar');
-    //     setErrorFor(email, 'Användaren existerar redan');
-    //     break;
-    // }
 
   }
 
@@ -125,10 +106,10 @@ function checkInputs() {
 
 }
 
-saveBtn.addEventListener('click', (e) => {
-  e.preventDefault()
-  checkEditedInputs()
-})
+// saveBtn.addEventListener('click', (e) => {
+//   e.preventDefault()
+//   checkEditedInputs()
+// })
 
 // function checkEditedInputs() {
 //   const namnInput = namn.value.trim()
@@ -198,18 +179,7 @@ function isEmail(email) {
   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 
-function isUser(input) {
-  users.forEach(user => {
-    let mail = user.email
-    if (mail === input) {
-      console.log("ANVÄNDAREN EXISTERAR!");
-      return true;
-    } else {
-      console.log('Ny användare!');
-      return false;
-    }
-  });
-}
+
 
 
 
@@ -249,6 +219,13 @@ function addEditedUser(id) {
   listUsers();
 }
 
+function editUser(target) {
+  namn.value = target.namn
+  efternamn.value = target.efternamn
+  email.value = target.email;
+  saveBtn.style.visibility = 'visible'
+}
+
 output.addEventListener('click', (e) => {
   if (e.target.id === "delete") {
     console.log(e.target.parentElement.parentElement.id);
@@ -271,13 +248,33 @@ output.addEventListener('click', (e) => {
 
 })
 
-function editUser(target) {
-  namn.value = target.namn
-  efternamn.value = target.efternamn
-  email.value = target.email;
-  saveBtn.style.visibility = 'visible'
+function isUser(input) {
+  for (let i = 0; i < users.length; i++) {
+
+    const user = users[i];
+    let tester = 0
+    if (user.email === input) {
+      tester += 1
+    }
+    if (tester > 0) {
+      return true
+    }
+
+  }
 }
+
+// users.forEach(user => {
+
+//   if (user.email == input) {
+//     
+//     return true;
+//   } else {
+//    
+//     return false
+//   }
+// });
+
 
 // listUsers()
 
-// isUser('förnamn3.efternamn3@mail.com')
+// console.log(Boolean(isUser("förnamn3.efternamn3@mail.com")));
