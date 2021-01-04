@@ -119,7 +119,7 @@ button {
 }
 
 #small {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 #delete{
@@ -138,5 +138,10 @@ button {
   font-size: 1.3rem;
   color: orange;
 
+}
+
+a {
+  color: goldenrod;
+  
 }
 

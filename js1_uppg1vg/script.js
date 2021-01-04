@@ -1,24 +1,9 @@
 let users = [
-  // {
-  //   id: "1",
-  //   namn: 'Förnamn',
-  //   efternamn: 'Efternamn',
-  //   email: 'förnamn.efternamn@mail.com'
-  // },
-  // {
-  //   id: "2",
-  //   namn: 'Förnamn2',
-  //   efternamn: 'Efternamn2',
-  //   email: 'förnamn2.efternamn2@mail.com'
-  // },
-  // {
-  //   id: "3",
-  //   namn: 'Förnamn3',
-  //   efternamn: 'Efternamn3',
-  //   email: 'förnamn3.efternamn3@mail.com'
-  // }
+
 ]
 
+
+//selectors
 const form = document.getElementById('form');
 const button = document.getElementById('button')
 const saveBtn = document.getElementById('save')
@@ -31,10 +16,17 @@ let position = 0
 let userId = 0
 
 
-// const deleted = document.querySelector('#delete')
 
 
+//Event listeners
 
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  checkInputs();
+
+
+});
 button.addEventListener('click', (e) => {
   e.preventDefault();
 
@@ -42,6 +34,37 @@ button.addEventListener('click', (e) => {
 
 
 });
+
+
+output.addEventListener('click', (e) => {
+  if (e.target.id === "delete") {
+    console.log(e.target.parentElement.parentElement.id);
+    console.log(e);
+    users = users.filter(user => user.id !== e.target.parentElement.id);
+
+    listUsers();
+  } else if (e.target.id === "edit") {
+    users.forEach(user => {
+      if (user.id === e.target.parentElement.id) {
+        editUser(user)
+      }
+
+    });
+
+  }
+
+})
+
+saveBtn.addEventListener('click', (e) => {
+  e.preventDefault()
+  checkEditedInputs()
+})
+
+
+
+
+
+//Functions
 
 function checkInputs() {
   //get values:
@@ -86,6 +109,9 @@ function checkInputs() {
         efternamn.value = ''
         email.value = ''
         console.log(users);
+        namn.parentElement.className = 'form-control'
+        efternamn.parentElement.className = 'form-control'
+        email.parentElement.className = 'form-control'
 
 
       }
@@ -97,10 +123,7 @@ function checkInputs() {
 
 }
 
-saveBtn.addEventListener('click', (e) => {
-  e.preventDefault()
-  checkEditedInputs()
-})
+
 
 function checkEditedInputs() {
   const namnInput = namn.value.trim()
@@ -133,21 +156,29 @@ function checkEditedInputs() {
 
   // add user:
   let elementsArray = document.getElementsByClassName("success");
-
+  console.log(elementsArray);
   if (elementsArray.length === 3) {
     removeUser(position)
     console.log(users);
     addEditedUser(position)
+
+    // form cleanup
     namn.value = ''
     efternamn.value = ''
     email.value = ''
+    saveBtn.style.visibility = 'hidden'
+    namn.parentElement.className = 'form-control'
+    efternamn.parentElement.className = 'form-control'
+    email.parentElement.className = 'form-control'
 
 
   }
 }
 
+
 function removeUser(position) {
   users.splice(position, 1);
+
 }
 
 
@@ -163,10 +194,12 @@ function setErrorFor(input, message) {
   formControl.className = 'form-control error'
 }
 
+
 function setSuccessFor(input) {
   const formControl = input.parentElement;
   formControl.className = 'form-control success'
 }
+
 
 function isEmail(email) {
   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
@@ -182,13 +215,14 @@ function listUsers() {
     output.innerHTML += `<div div id = "${user.id}" class= "user" >
     <p>${user.namn} ${user.efternamn}</p>
 
-    <p id="small">${user.email}</p>
+    <p id="small"><a href="">${user.email}</a></p>
     <i class="fas fa-pen-square" id="edit"></i>
     <i class="far fa-times-circle" id="delete"></i>
   </div > `
   })
 
 }
+
 
 function addUser() {
   let user = {
@@ -201,6 +235,7 @@ function addUser() {
   listUsers();
 }
 
+
 function addEditedUser(position) {
   let user = {
     id: userId,
@@ -211,6 +246,7 @@ function addEditedUser(position) {
   users.splice(position, 0, user);
   listUsers();
 }
+
 
 function editUser(target) {
   namn.value = target.namn
@@ -223,27 +259,7 @@ function editUser(target) {
   saveBtn.style.visibility = 'visible'
 }
 
-output.addEventListener('click', (e) => {
-  if (e.target.id === "delete") {
-    console.log(e.target.parentElement.parentElement.id);
-    console.log(e);
-    users = users.filter(user => user.id !== e.target.parentElement.id);
 
-    listUsers();
-  } else if (e.target.id === "edit") {
-    users.forEach(user => {
-      if (user.id === e.target.parentElement.id) {
-        editUser(user)
-      }
-
-    });
-
-    // target = e.target.parentElement
-    // console.log(target);
-    // editUser(target)
-  }
-
-})
 
 function isUser(input) {
   for (let i = 0; i < users.length; i++) {
@@ -270,20 +286,4 @@ function findIndex(id) {
   }
 }
 
-// users.forEach(user => {
 
-//   if (user.email == input) {
-//     
-//     return true;
-//   } else {
-//    
-//     return false
-//   }
-// });
-
-
-listUsers()
-// removeUser(1)
-// console.log(users);
-
-// console.log(Boolean(isUser("förnamn3.efternamn3@mail.com")));
