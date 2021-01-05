@@ -1,14 +1,9 @@
 let users = [
-  // {
-  //   id: 1,
-  //   namn: 'test',
-  //   efternamn: 'hej',
-  //   email: 'fritte@fruit.com'
-  // }
+
 ]
 
 
-//selectors
+//selectors och variabler
 const form = document.getElementById('form');
 const button = document.getElementById('button')
 const saveBtn = document.getElementById('save')
@@ -153,8 +148,7 @@ function checkEditedInputs() {
 
     setErrorFor(email, 'Fältet kan inte lämnas tomt')
   } else if (isEmail(emailInput)) {
-    console.log(`${currentEmail(position)} lika med ${emailInput}`);
-    console.log("isuser: " + isUser(emailInput));
+
     if (currentEmail(position) != emailInput && isUser(emailInput)) {
 
       setErrorFor(email, 'Mailadressen används redan')
@@ -163,7 +157,7 @@ function checkEditedInputs() {
       setSuccessFor(email);
       // add user:
       let elementsArray = document.getElementsByClassName("success");
-      console.log(elementsArray);
+
       if (elementsArray.length === 3) {
         removeUser(position)
         console.log(users);
@@ -317,5 +311,3 @@ function disabler(knapp1, knapp2) {
   knapp2.disabled = false;
 }
 
-
-// console.log(currentEmail(0));
