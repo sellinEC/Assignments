@@ -1,5 +1,10 @@
 let users = [
-
+  // {
+  //   id: 1,
+  //   namn: 'test',
+  //   efternamn: 'hej',
+  //   email: 'fritte@fruit.com'
+  // }
 ]
 
 
@@ -22,18 +27,17 @@ let userId = 0
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-
-  checkInputs();
-
+  checkInputs()
 
 });
-button.addEventListener('click', (e) => {
-  e.preventDefault();
 
-  checkInputs();
-
-
+form.addEventListener('keyup', (e) => {
+  if (e.code === 'Enter' && button.disabled) {
+    e.preventDefault();
+    checkEditedInputs()
+  }
 });
+
 
 
 output.addEventListener('click', (e) => {
@@ -125,6 +129,8 @@ function checkInputs() {
 
 
 
+
+
 function checkEditedInputs() {
   const namnInput = namn.value.trim()
   const efternamnInput = efternamn.value.trim()
@@ -146,33 +152,43 @@ function checkEditedInputs() {
   if (emailInput === '') {
 
     setErrorFor(email, 'Fältet kan inte lämnas tomt')
-  } else if (!isEmail(emailInput)) {
-    setErrorFor(email, 'Ogiltig mailadress')
+  } else if (isEmail(emailInput)) {
+    console.log(`${currentEmail(position)} lika med ${emailInput}`);
+    console.log("isuser: " + isUser(emailInput));
+    if (currentEmail(position) != emailInput && isUser(emailInput)) {
+
+      setErrorFor(email, 'Mailadressen används redan')
+    } else {
+
+      setSuccessFor(email);
+      // add user:
+      let elementsArray = document.getElementsByClassName("success");
+      console.log(elementsArray);
+      if (elementsArray.length === 3) {
+        removeUser(position)
+        console.log(users);
+        addEditedUser(position)
+
+        // form cleanup
+        namn.value = ''
+        efternamn.value = ''
+        email.value = ''
+        saveBtn.style.visibility = 'hidden'
+        button.style.visibility = 'visible'
+        disabler(saveBtn, button)
+        namn.parentElement.className = 'form-control'
+        efternamn.parentElement.className = 'form-control'
+        email.parentElement.className = 'form-control'
+
+
+      }
+    }
 
   } else {
-    setSuccessFor(email);
+
+    setErrorFor(email, 'Ogiltig mailadress')
   }
 
-
-  // add user:
-  let elementsArray = document.getElementsByClassName("success");
-  console.log(elementsArray);
-  if (elementsArray.length === 3) {
-    removeUser(position)
-    console.log(users);
-    addEditedUser(position)
-
-    // form cleanup
-    namn.value = ''
-    efternamn.value = ''
-    email.value = ''
-    saveBtn.style.visibility = 'hidden'
-    namn.parentElement.className = 'form-control'
-    efternamn.parentElement.className = 'form-control'
-    email.parentElement.className = 'form-control'
-
-
-  }
 }
 
 
@@ -223,12 +239,15 @@ function listUsers() {
 
 }
 
+function capFirst(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 function addUser() {
   let user = {
     id: Date.now().toString(),
-    namn: namn.value.trim(),
-    efternamn: efternamn.value.trim(),
+    namn: capFirst(namn.value.trim()),
+    efternamn: capFirst(efternamn.value.trim()),
     email: email.value.trim()
   }
   users.push(user);
@@ -239,8 +258,8 @@ function addUser() {
 function addEditedUser(position) {
   let user = {
     id: userId,
-    namn: namn.value.trim(),
-    efternamn: efternamn.value.trim(),
+    namn: capFirst(namn.value.trim()),
+    efternamn: capFirst(efternamn.value.trim()),
     email: email.value.trim()
   }
   users.splice(position, 0, user);
@@ -257,6 +276,9 @@ function editUser(target) {
   console.log("vid position" + " " + position);
   console.log("id: " + userId);
   saveBtn.style.visibility = 'visible'
+  button.style.visibility = 'hidden'
+  disabler(button, saveBtn)
+
 }
 
 
@@ -286,4 +308,14 @@ function findIndex(id) {
   }
 }
 
+function currentEmail(position) {
+  return users[position].email
+}
 
+function disabler(knapp1, knapp2) {
+  knapp1.disabled = true;
+  knapp2.disabled = false;
+}
+
+
+// console.log(currentEmail(0));

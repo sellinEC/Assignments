@@ -90,7 +90,7 @@ h2{
   color: #e74c3c;
 }
 
-button {
+.form button {
   background-color: aqua;
   border: 2px solid aqua;
   border-radius: 5px;
@@ -101,6 +101,7 @@ button {
   width: 100%;
   padding: 0.7 1rem;
   margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 #save {
   visibility: hidden;
@@ -113,6 +114,7 @@ button {
 }
 
 .user{
+  background-color: #fff;
   padding-top: .5rem;
   position: relative;
   
@@ -143,5 +145,9 @@ button {
 a {
   color: goldenrod;
   
+}
+
+a:hover {
+  color: grey;
 }
 
