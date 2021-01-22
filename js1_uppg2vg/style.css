@@ -1,0 +1,44 @@
+.container {
+  width: 80%;
+}
+
+.todo {
+  cursor: pointer;
+}
+.todo:active{
+  box-shadow: none !important;
+}
+
+form {
+  position: relative;
+}
+#small {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+}
+
+.done {
+  /* background-color: rgba(255, 255, 255, 0.3); */
+  color: grey;
+  /* text-decoration: line-through; */
+}
+
+.done p {
+  text-decoration: line-through;
+}
+
+#delete {
+  color: red;
+  text-decoration: none;
+  /* opacity: 0.9; */
+  font-size: 1.5rem;
+  margin-right: 20px;
+  cursor: pointer;
+  text-shadow:2px 2px 3px rgba(105, 103, 103, 0.75)
+}
+#delete:active {
+  text-shadow: none;
+}
+
+
