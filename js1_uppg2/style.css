@@ -1,0 +1,8 @@
+form {
+  position: relative;
+}
+#small {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+}
