@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&family=Ultra&display=swap');
 .container {
   width: 80%;
+  position: relative;
 }
 
 .todo {
   cursor: pointer;
 }
-.todo:active{
+.todo:active {
   box-shadow: none !important;
 }
 
@@ -25,7 +28,7 @@ form {
 }
 
 .done p {
-  text-decoration: line-through;
+  /* text-decoration: line-through; */
 }
 
 #delete {
@@ -35,10 +38,22 @@ form {
   font-size: 1.5rem;
   margin-right: 20px;
   cursor: pointer;
-  text-shadow:2px 2px 3px rgba(105, 103, 103, 0.75)
-}
-#delete:active {
-  text-shadow: none;
+  text-shadow: 2px 2px 3px rgba(105, 103, 103, 0.75);
 }
 
+.holder {
+  position: relative;
+}
 
+.overlay {
+  position: absolute;
+  bottom: 20%;
+  left: 5%;
+  /* border: 2px solid black !important; */
+  color: rgb(150, 19, 19);
+  font-size: 2.5rem;
+  overflow: hidden;
+  font-family: 'Ultra', serif;
+  letter-spacing: 10px;
+  text-shadow: 2px 2px 3px rgba(105, 103, 103, 0.75);
+}

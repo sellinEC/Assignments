@@ -108,6 +108,8 @@ button {
   
 }
 
-#small {
-  font-size: 0.8rem;
+a {
+  font-size: 0.7rem;
+  color: grey;
+  margin-bottom: 1rem;
 }

@@ -1,5 +1,22 @@
 let users = [
-
+  {
+    id: 1,
+    namn: 'fritte',
+    efternamn: 'fruit',
+    email: 'mail@mail.com'
+  },
+  {
+    id: 2,
+    namn: 'user',
+    efternamn: 'two',
+    email: 'mail@mail.com'
+  },
+  {
+    id: 3,
+    namn: 'user',
+    efternamn: 'three',
+    email: 'mail@mail.com'
+  }
 ]
 
 const form = document.getElementById('form');
@@ -7,7 +24,7 @@ const button = document.getElementById('button')
 const namn = document.getElementById('namn');
 const efternamn = document.getElementById('efternamn');
 const email = document.getElementById('email');
-const output = document.getElementById('users')
+const output = document.getElementById('users');
 
 
 button.addEventListener('click', (e) => {
@@ -40,12 +57,12 @@ function checkInputs() {
 
   if (emailInput === '') {
 
-    setErrorFor(email, 'Skriv din email')
-  } else if (!isEmail(emailInput)) {
-    setErrorFor(email, 'Ogiltig mailadress')
+    setErrorFor(email, 'Skriv din email');
 
-
+  } else if (!isEmail(emailInput)) {                
+    setErrorFor(email, 'Ogiltig mailadress');
   } else {
+
     setSuccessFor(email);
   }
 
@@ -81,13 +98,17 @@ function isEmail(email) {
   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 
+
+
+
 function listUsers() {
   output.innerHTML = ''
   users.forEach(user => {
     output.innerHTML += `<div class="user">
     <p>${user.namn} ${user.efternamn}</p>
-    <p id="small">${user.email}</p>
+    <a href="#">${user.email}</a>
   </div>`
+  
   })
 
 }
@@ -103,3 +124,5 @@ function addUser() {
   listUsers();
 }
 
+tester = document.getElementsByClassName("success");
+console.log(tester);

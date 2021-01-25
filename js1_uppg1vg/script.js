@@ -19,19 +19,27 @@ let userId = 0
 
 
 //Event listeners
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  checkInputs()
-
-});
-
 form.addEventListener('keyup', (e) => {
   if (e.code === 'Enter' && button.disabled) {
     e.preventDefault();
+    // form.submit()
     checkEditedInputs()
   }
 });
+
+form.addEventListener('submit', (e) => {
+  if (button.disabled) {
+    e.preventDefault();
+    checkEditedInputs()
+  } else {
+    e.preventDefault();
+    checkInputs()
+  }
+
+
+});
+
+
 
 
 
