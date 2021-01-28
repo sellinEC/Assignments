@@ -29,7 +29,7 @@ let todos= []
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  if(input.value === '') {
+  if(input.value === '' || input.value === ' ' || input.value === '  ' || input.value === '   ' ) {
     error.innerText = 'Skriv det om du tänkte göra det'
   }else{
     
