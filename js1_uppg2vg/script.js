@@ -1,10 +1,27 @@
 const form = document.getElementById('form');
 const input = document.getElementById('input');
 const output = document.getElementById('output');
-// const h3 = document.querySelectorAll()
-// const btn = document.getElementById('done')
-error = document.getElementById('small')
-todos= []
+let error = document.getElementById('small')
+// todos = [
+//   {
+//     id: 1,
+//     title: "title",
+//     completed: false
+//   },
+//   {
+//     id: 2,
+//     title: "title2",
+//     completed: false
+//   },
+//   {
+//     id: 3,
+//     title: "title3",
+//     completed: false
+//   }
+// ]
+let todos= []
+
+
 
 
 //Eventlisteners
@@ -21,12 +38,20 @@ form.addEventListener('submit', (e) => {
     listTodos();
     input.value= ''
   }
- 
+ input.focus();
 })
 
-output.addEventListener('click', (e) => {
+document.addEventListener('click', (e) => {
 toggleForDelete(e)
 })
+
+// h3.forEach(item => {
+//   item.addEventListener('click', (e) =>{
+//     pDelete(e)
+//   })
+  
+// })
+
 
 
 getTodos();
@@ -39,11 +64,11 @@ getTodos();
 
 async function getTodos() {
   const res = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=10 ');
-  console.log(res);
+  // console.log(res);
   const data = await res.json();
-  console.log(data);
+  // console.log(data);
   todos = data
-  console.log(todos);
+  // console.log(todos);
   listTodos();
 }
 
@@ -61,20 +86,49 @@ async function addTodo(input) {
 const data = await res.json();
 data.id = Date.now()   //custom ID?
 // console.log(data);
-// todos.unshift(data);
+todos.unshift(data);
 listTodos();
 }
+
+
+
+function listTodos() {
+  output.innerHTML = ''
+  todos.forEach(todo => {
+  if(todo.completed === false) {
+    output.innerHTML +=
+    `
+    <div id="${todo.id}" class="todo shadow-sm p-2 mt-4 d-flex justify-content-between">
+      <p id="${todo.id}">${todo.title}</p>
+    </div>
+    `
+  }else{
+    // console.log(todo.completed);
+    output.innerHTML +=
+    `
+    <div class="holder animate">
+    <div id="${todo.id}" class="done todo shadow-sm p-2 mt-4 d-flex justify-content-between animate">
+      <p id="${todo.id}">${todo.title}</p>
+      <i class="fas fa-trash-alt" id="delete"></i>
+    </div>
+    <div class="overlay">DONE</div>
+    </div>
+    `
+  }
+  
+  });
+}
+
 
 function toggleForDelete(e) {
   if(e.target.id === "delete"){
     console.log(e.target.parentElement.id +" " +"deleteknapp!");
     todos = todos.filter(todo => todo.id !== parseInt(e.target.parentElement.id))
-    todos.forEach(todo => {
-      console.log(todo.id);
-    })
     listTodos();
+
   }else{
-    console.log(e.target.id);
+  console.log(e.target.id);
+
     todos.forEach(todo => {
       if (parseInt(e.target.id) === todo.id) {
         if(todo.completed === true){
@@ -87,34 +141,67 @@ function toggleForDelete(e) {
         
       }
       listTodos();
-  })
-
-  }
+    })
+}
 }
 
-function listTodos() {
-  output.innerHTML = ''
-  todos.forEach(todo => {
-  if(todo.completed === false) {
-    output.innerHTML +=
-    `
-    <div id="${todo.id}" class="todo shadow-sm p-2 mt-4 d-flex justify-content-between">
-      <p>${todo.title}</p>
-    </div>
-    `
-  }else{
-    // console.log(todo.completed);
-    output.innerHTML +=
-    `
-    <div class="holder">
-    <div id="${todo.id}" class="done todo shadow-sm p-2 mt-4 d-flex justify-content-between">
-      <p>${todo.title}</p>
-      <i class="fas fa-trash-alt" id="delete"></i>
-    </div>
-    <div class="overlay">DONE</div>
-    </div>
-    `
-  }
+// function smartDelete(e , times) {
+//   let element = 'parentElement'.repeat(times)
+
+//   if(e.target.id === "delete"){
+//     console.log(`${e.target.element.id}` +" " +"deleteknapp!");
+//     todos = todos.filter(todo => todo.id !== parseInt(e.target.parentElement.id))
+//     listTodos();
+
+//   }else{
+//   console.log(e.target.id);
+
+//     todos.forEach(todo => {
+//       if (parseInt(e.target.id) === todo.id) {
+//         if(todo.completed === true){
+//           todo.completed = false;
+//         }else{
+//           todo.completed = true;
+//         }
   
-  });
-}
+//         // console.log(todo);
+        
+//       }
+//       listTodos();
+//   })
+
+//   }
+// }
+// function pDelete(e) {
+//   if(e.target.id === "delete"){
+//     console.log(e.target.parentElement.parentElement.id +" " +"deleteknapp!");
+//     todos = todos.filter(todo => todo.id !== parseInt(e.target.parentElement.parentElement.id))
+
+  
+//     listTodos();
+//   }else{
+//     console.log(e.target.id);
+//     todos.forEach(todo => {
+//       if (parseInt(e.target.id) === todo.id) {
+//         if(todo.completed === true){
+//           todo.completed = false;
+//         }else{
+//           todo.completed = true;
+//         }
+  
+//         console.log(todo);
+        
+//       }
+//       listTodos();
+//   })
+
+//   }
+// }
+
+
+
+
+
+// // async function getIt() {
+// //   blabla
+// }
