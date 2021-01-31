@@ -1,24 +1,9 @@
+//Variabler
 const form = document.getElementById('form');
 const input = document.getElementById('input');
 const output = document.getElementById('output');
 let error = document.getElementById('small')
-// todos = [
-//   {
-//     id: 1,
-//     title: "title",
-//     completed: false
-//   },
-//   {
-//     id: 2,
-//     title: "title2",
-//     completed: false
-//   },
-//   {
-//     id: 3,
-//     title: "title3",
-//     completed: false
-//   }
-// ]
+
 let todos= []
 
 
@@ -27,9 +12,11 @@ let todos= []
 //Eventlisteners
 
 
+
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  if(input.value === '' || input.value === ' ' || input.value === '  ' || input.value === '   ' ) {
+  if(input.value.trim().length < 1 ) { //tack, blev en smula renare.
     error.innerText = 'Skriv det om du tänkte göra det'
   }else{
     
@@ -41,16 +28,13 @@ form.addEventListener('submit', (e) => {
  input.focus();
 })
 
+
+
 output.addEventListener('click', (e) => {
 toggleForDelete(e)
 })
 
-// h3.forEach(item => {
-//   item.addEventListener('click', (e) =>{
-//     pDelete(e)
-//   })
-  
-// })
+
 
 
 
@@ -73,7 +57,7 @@ function listTodos() {
     </div>
     `
   }else{
-    // console.log(todo.completed);
+   
     output.innerHTML +=
     `
     <div class="holder animate">
@@ -92,11 +76,11 @@ function listTodos() {
 
 async function getTodos() {
   const res = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=10 ');
-  // console.log(res);
+
   const data = await res.json();
-  // console.log(data);
+ 
   todos = data
-  // console.log(todos);
+  
   listTodos();
 }
 
@@ -112,8 +96,7 @@ async function addTodo(input) {
   },
 })
 const data = await res.json();
-data.id = Date.now()   //custom ID?
-// console.log(data);
+data.id = Date.now()  
 todos.unshift(data);
 listTodos();
 }
@@ -139,8 +122,7 @@ function toggleForDelete(e) {
         }else{
           todo.completed = true;
         }
-  
-        // console.log(todo);
+
         
       }
       listTodos();
@@ -148,63 +130,3 @@ function toggleForDelete(e) {
 }
 }
 
-// function smartDelete(e , times) {
-//   let element = 'parentElement'.repeat(times)
-
-//   if(e.target.id === "delete"){
-//     console.log(`${e.target.element.id}` +" " +"deleteknapp!");
-//     todos = todos.filter(todo => todo.id !== parseInt(e.target.parentElement.id))
-//     listTodos();
-
-//   }else{
-//   console.log(e.target.id);
-
-//     todos.forEach(todo => {
-//       if (parseInt(e.target.id) === todo.id) {
-//         if(todo.completed === true){
-//           todo.completed = false;
-//         }else{
-//           todo.completed = true;
-//         }
-  
-//         // console.log(todo);
-        
-//       }
-//       listTodos();
-//   })
-
-//   }
-// }
-// function pDelete(e) {
-//   if(e.target.id === "delete"){
-//     console.log(e.target.parentElement.parentElement.id +" " +"deleteknapp!");
-//     todos = todos.filter(todo => todo.id !== parseInt(e.target.parentElement.parentElement.id))
-
-  
-//     listTodos();
-//   }else{
-//     console.log(e.target.id);
-//     todos.forEach(todo => {
-//       if (parseInt(e.target.id) === todo.id) {
-//         if(todo.completed === true){
-//           todo.completed = false;
-//         }else{
-//           todo.completed = true;
-//         }
-  
-//         console.log(todo);
-        
-//       }
-//       listTodos();
-//   })
-
-//   }
-// }
-
-
-
-
-
-// // async function getIt() {
-// //   blabla
-// }
