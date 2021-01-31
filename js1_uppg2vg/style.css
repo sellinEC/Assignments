@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&family=Ultra&display=swap');
+
 .container {
   width: 80%;
   position: relative;
@@ -8,9 +9,9 @@
 .todo {
   cursor: pointer;
 }
-.todo:active {
+/* .todo:active {
   box-shadow: none !important;
-}
+} */
 
 form {
   position: relative;
@@ -19,6 +20,7 @@ form {
   position: absolute;
   bottom: 0;
   left: 20px;
+  color: red;
 }
 
 .done {
@@ -40,6 +42,9 @@ form {
   cursor: pointer;
   text-shadow: 2px 2px 3px rgba(105, 103, 103, 0.75);
 }
+#delete:active {
+  text-shadow: none !important;
+}
 
 .holder {
   position: relative;
@@ -56,6 +61,7 @@ form {
   font-family: 'Ultra', serif;
   letter-spacing: 10px;
   text-shadow: 2px 2px 3px rgba(105, 103, 103, 0.75);
+  cursor: pointer;
 }
 
 p {

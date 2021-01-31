@@ -41,7 +41,7 @@ form.addEventListener('submit', (e) => {
  input.focus();
 })
 
-document.addEventListener('click', (e) => {
+output.addEventListener('click', (e) => {
 toggleForDelete(e)
 })
 
@@ -58,8 +58,36 @@ getTodos();
 
 
 
+
+
 //Functions
 
+function listTodos() {
+  output.innerHTML = ''
+  todos.forEach(todo => {
+  if(todo.completed === false) {
+    output.innerHTML +=
+    `
+    <div id="${todo.id}" class="todo shadow-sm p-2 mt-4 d-flex justify-content-between">
+      <p id="${todo.id}">${todo.title}</p>
+    </div>
+    `
+  }else{
+    // console.log(todo.completed);
+    output.innerHTML +=
+    `
+    <div class="holder animate">
+    <div id="${todo.id}" class="done todo shadow-sm p-2 mt-4 d-flex justify-content-between animate">
+      <p id="${todo.id}">${todo.title}</p>
+      <i class="fas fa-trash-alt" id="delete"></i>
+    </div>
+    <div id="${todo.id}" class="overlay">DONE</div>
+    </div>
+    `
+  }
+  
+  });
+}
 
 
 async function getTodos() {
@@ -92,32 +120,7 @@ listTodos();
 
 
 
-function listTodos() {
-  output.innerHTML = ''
-  todos.forEach(todo => {
-  if(todo.completed === false) {
-    output.innerHTML +=
-    `
-    <div id="${todo.id}" class="todo shadow-sm p-2 mt-4 d-flex justify-content-between">
-      <p id="${todo.id}">${todo.title}</p>
-    </div>
-    `
-  }else{
-    // console.log(todo.completed);
-    output.innerHTML +=
-    `
-    <div class="holder animate">
-    <div id="${todo.id}" class="done todo shadow-sm p-2 mt-4 d-flex justify-content-between animate">
-      <p id="${todo.id}">${todo.title}</p>
-      <i class="fas fa-trash-alt" id="delete"></i>
-    </div>
-    <div class="overlay">DONE</div>
-    </div>
-    `
-  }
-  
-  });
-}
+
 
 
 function toggleForDelete(e) {

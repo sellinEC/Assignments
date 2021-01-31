@@ -1,6 +1,4 @@
-let users = [
 
-]
 
 
 //selectors och variabler
@@ -11,7 +9,7 @@ const namn = document.getElementById('namn');
 const efternamn = document.getElementById('efternamn');
 const email = document.getElementById('email');
 const output = document.querySelector('#users');
-
+let users = []
 let position = 0
 let userId = 0
 
